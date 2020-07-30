@@ -5,9 +5,9 @@ const marks = [4, 5, 5, 3, 4, 5];
 /* Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]]; */
 
 const getPairs = () => {
-    let girls = [];
-    let boys = [];
-    let pairs = [];
+    const girls = [];
+    const boys = [];
+    const pairs = [];
 
     for (let i = 0; i < students.length; i++) {
         if (students[i] === 'Олена' || students[i] === 'Іра' || students[i] === 'Світлана') {
@@ -53,3 +53,16 @@ const studentsAndMarks = (array, mark) => {
 }
 const studentsWithMarks = studentsAndMarks(students, marks);
 console.log(studentsWithMarks);
+
+////////////////////////////////////////////////////////////
+/* Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт(тут функція буде нечистою, але не повинна мутувати массив): [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]] */
+const randomMark = (array) => {
+    const studentsWithRandomMarks = [];
+    for (let i = 0; i < array.length; i++) {
+        studentsWithRandomMarks.push([studentsWithSubjects[i] + ': ' + Math.ceil(Math.random() * 5)]);
+    }
+    return studentsWithRandomMarks;
+}
+
+const allStudentsWithMarks = randomMark(studentsWithSubjects);
+console.log(allStudentsWithMarks);
