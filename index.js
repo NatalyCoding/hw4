@@ -41,3 +41,15 @@ const studentsAndThemes = (pair, subject) => {
 }
 const studentsWithSubjects = studentsAndThemes(pairs, themes);
 console.log(studentsWithSubjects);
+
+/////////////////////////////////////////////////////////////
+/* Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]] */
+const studentsAndMarks = (array, mark) => {
+    const studentsMarks = [];
+    for (let i = 0; i < array.length; i++) {
+        studentsMarks.push([students[i] + ', ' + marks[i]]);
+    }
+    return studentsMarks;
+}
+const studentsWithMarks = studentsAndMarks(students, marks);
+console.log(studentsWithMarks);
